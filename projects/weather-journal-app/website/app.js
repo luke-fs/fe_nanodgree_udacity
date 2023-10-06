@@ -9,7 +9,7 @@ let newDate = d.getMonth()+1+'/'+ d.getDate()+'/'+ d.getFullYear();
 // Async function to fetchWeatherData
 async function fetchWeatherData(zip) {
   try {
-    const apiUrlSpecific = `${apiUrl}?zip=${zip},DE&appid=${apiKey}` //hardcoded DE because I am German and I use the app
+    const apiUrlSpecific = `${apiUrl}?zip=${zip},US&appid=${apiKey}`
     const response = await fetch(apiUrlSpecific); // Führe die GET-Anfrage durch
     if (!response.ok) {
       throw new Error(`HTTP-Fehler! Status: ${response.status}`);
