@@ -4,13 +4,13 @@ This is the first project of the Udacity Frontend Nanodegree.
 ## Table of Contents
 
 * [Description](#description)
-* [Instructions](#instructions)
+* [Instructions](#instructions-and-usage)
 * [Components] (#components)
 * [Dependencies] (#dependencies)
 
 ## Description
 You can display a Landing Page, including content that can be splitted into a variable amount of sections. There is a scroll animation upon a click on the respective section in the navbar. To improve UX, the navbar disappears after a while when the user is not scrolling.
-## Instructions / Usage
+## Instructions and Usage
 To get started just open index.html in your browser.
 
 ## Components
