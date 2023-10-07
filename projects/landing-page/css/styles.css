@@ -80,6 +80,10 @@ section {
     padding-top: 1%;
 }
 
+.navbar__menu .your-active-class {
+    background-color: #727272;
+}
+
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;

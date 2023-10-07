@@ -34,10 +34,16 @@ function makeActive(){
     console.log(sections)
     for (const section of sections) {
         const box = section.getBoundingClientRect();
+        const currentSectionId = section.getAttribute('id');
+        const currentNavLink = document.querySelector(`[href="#${currentSectionId}"]`);
         if (box.top <= 150 && box.bottom >= 150) {
             section.classList.add('your-active-class');
+            currentNavLink.classList.add('your-active-class');
+
+
         } else {
             section.classList.remove('your-active-class');
+            currentNavLink.classList.remove('your-active-class');
         }
         }
 }
@@ -84,7 +90,7 @@ window.addEventListener('scroll', function () {
     if (!isScrolling) {
         navbarList.classList.add('hidden-nav');
     }
-    }, 1500);
+    }, 150000);
   });
   
     //Even Listener to Click on Navbar link and make sure it is of type A
