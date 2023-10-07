@@ -13,50 +13,88 @@
  * 
 */
 
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
+//Define Global Variables
+let sections;
+let navbarList;
+let isScrolling = false;
+let timeout;
 
-/**
- * Define Global Variables
- * 
-*/
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
+//Helper Functions//
 
 // Scroll to anchor ID using scrollTO event
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+// Function to check whether active class needs to be changed
+function makeActive(){
+    console.log("Scroll Event")
+    console.log(sections)
+    for (const section of sections) {
+        const box = section.getBoundingClientRect();
+        if (box.top <= 150 && box.bottom >= 150) {
+            section.classList.add('your-active-class');
+        } else {
+            section.classList.remove('your-active-class');
+        }
+        }
+}
 
+//Main Code Functions//
 
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
+// Generate navbar function
+function generateNavbar(){
+    sections = document.querySelectorAll('section');
 
-// Build menu 
+    // Loop through all sections to generate navbar elements
+    sections.forEach((section, index) => {
+        const sectionTitle = section.getAttribute('data-nav');
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<a href="#section${index + 1}" class=menu__link>${sectionTitle}</a>`; 
+        navbarList.appendChild(listItem);
+    });
+}
 
-// Scroll to section on link click
+//Eventlistener to DOM Content Loaded to generate the navbar and nest other even listeners
+document.addEventListener('DOMContentLoaded', function () {
+    sections = document.querySelectorAll('section'); 
+    navbarList = document.getElementById('navbar__list');
 
-// Set sections as active
+    //Call function to generate the navbar
+    generateNavbar();
+
+// Eventlistener to scroll to set active class
+window.addEventListener('scroll', function () {
+    //Call makeActive to mark active section
+    makeActive()
+
+    isScrolling = true;
+
+    navbarList.classList.remove('hidden-nav');
+
+    // Clear the timeout to prevent hiding the navbar while scrolling
+    clearTimeout(timeout);
+
+    // Set a timeout to hide the navbar if the user stops scrolling after a certain time
+    timeout = setTimeout(function () {
+    isScrolling = false;
+
+    if (!isScrolling) {
+        navbarList.classList.add('hidden-nav');
+    }
+    }, 1500);
+  });
+  
+    //Even Listener to Click on Navbar link and make sure it is of type A
+      navbarList.addEventListener('click', function (event) {
+          if (event.target.tagName === 'A') {
+              event.preventDefault();
+              const sectionId = event.target.getAttribute('href').slice(1); 
+              scrollToSection(sectionId); 
+          }
+      });
+  });
 
 

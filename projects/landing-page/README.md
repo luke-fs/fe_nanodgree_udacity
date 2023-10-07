@@ -1,13 +1,20 @@
 # Landing Page Project
+This is the first project of the Udacity Frontend Nanodegree.
 
 ## Table of Contents
 
+* [Description](#description)
 * [Instructions](#instructions)
+* [Components] (#components)
+* [Dependencies] (#dependencies)
 
-## Instructions
+## Description
+You can display a Landing Page, including content that can be splitted into a variable amount of sections. There is a scroll animation upon a click on the respective section in the navbar. To improve UX, the navbar disappears after a while when the user is not scrolling.
+## Instructions / Usage
+To get started just open index.html in your browser.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Components
+The projects consists of 3 parts: index-html, app.js and styles.css
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Dependencies
+There are no dependencies that needs to be installed. You need to have a up-to-date browser that supports execution of JavaScript.
