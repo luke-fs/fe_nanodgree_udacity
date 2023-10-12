@@ -1,0 +1,11 @@
+.footer {
+    grid-area: ft;
+    background-color: aliceblue;
+
+}
+
+.navbar {
+    grid-area: nav;
+    font-size: 2em;
+    background-color: aliceblue;
+}

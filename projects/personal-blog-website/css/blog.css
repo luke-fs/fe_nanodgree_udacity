@@ -1,0 +1,59 @@
+
+.sidebar-left {
+    grid-area: sbl;
+}
+
+.sidebar-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: sbr;
+    margin: 5%;
+    border: 5px solid aliceblue;
+    padding: 5px;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: ft;
+}
+
+.navbar {
+    grid-area: nav;
+}
+
+#blogcontainer {
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-rows: 1fr 7fr 1fr;
+    grid-template-areas:
+    "nav nav nav"
+    "sbl content sbr"
+    "ft ft ft";
+}
+
+@media (max-width: 768px) {
+    #blogcontainer {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 7fr 3fr 1fr;
+        grid-template-areas:
+        "nav nav"
+        "sbl content"
+        "sbr sbr"
+        "ft ft";
+    }
+}
+
+.about {
+    background-color: rgb(212, 212, 212);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
