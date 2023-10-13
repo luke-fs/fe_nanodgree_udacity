@@ -64,7 +64,11 @@
 }
 
 .navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     text-align: center;
+    justify-content: space-around;
 }
 
 .footer {
@@ -98,4 +102,9 @@ button {
 button:hover {
     background-color: #005ea7; /* Dunklere Blaufarbe bei Hover */
     transform: scale(1.05); /* Vergrößert den Button leicht bei Hover */
+}
+
+#subscribe, #search{
+    font-size: 14px;
+    margin: 36px;
 }
